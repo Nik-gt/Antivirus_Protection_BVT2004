@@ -1,0 +1,8 @@
+D:\Projects_antivirus\Antivirus_UI\x64\Debug\Antivirus_UI + service.vcxproj.AssemblyReference.cache
+D:\Projects_antivirus\Antivirus_UI\x64\Debug\Antivirus_UI___service.Form1.resources
+D:\Projects_antivirus\Antivirus_UI\x64\Debug\Antivirus_UI + service.vcxproj.GenerateResource.cache
+D:\Projects_antivirus\Antivirus_UI\x64\Debug\Antivirus_UI.exe
+D:\Antivirus_Protection_BVT2004\Antivirus_UI\x64\Debug\Antivirus_UI + service.vcxproj.AssemblyReference.cache
+D:\Antivirus_Protection_BVT2004\Antivirus_UI\x64\Debug\Antivirus_UI___service.Form1.resources
+D:\Antivirus_Protection_BVT2004\Antivirus_UI\x64\Debug\Antivirus_UI + service.vcxproj.GenerateResource.cache
+D:\Antivirus_Protection_BVT2004\Antivirus_UI\x64\Debug\Antivirus_UI.exe

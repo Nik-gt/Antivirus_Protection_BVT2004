@@ -1,0 +1,6 @@
+﻿  ConsoleApplication1.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_CreateDb\ConsoleApplication1.cpp(227,51): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_CreateDb\ConsoleApplication1.cpp(228,85): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_CreateDb\ConsoleApplication1.cpp(234,18): warning C4244: инициализация: преобразование "std::streamoff" в "int", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_CreateDb\ConsoleApplication1.cpp(280,17): warning C4244: инициализация: преобразование "std::streamoff" в "int", возможна потеря данных
+  ConsoleApplication1.vcxproj -> D:\Antivirus_Protection_BVT2004\Antivirus_CreateDb\x64\Debug\ConsoleApplication2.exe
