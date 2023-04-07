@@ -1,0 +1,33 @@
+﻿  Acommon.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Acommon.h(18,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Acommon.cpp(28,31): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Acommon.cpp(92,38): warning C4018: <=: несоответствие типов со знаком и без знака
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Acommon.cpp(118,50): warning C4244: инициализация: преобразование "unsigned __int64" в "unsigned int", возможна потеря данных
+  Adatabase.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Acommon.h(18,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Adatabase.cpp(157,25): warning C4244: инициализация: преобразование "unsigned __int64" в "unsigned int", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Adatabase.cpp(186,29): warning C4244: инициализация: преобразование "unsigned __int64" в "unsigned int", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Adatabase.cpp(219,38): warning C4244: аргумент: преобразование "unsigned __int64" в "int", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Adatabase.cpp(243,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Adatabase.cpp(340,20): warning C4018: <: несоответствие типов со знаком и без знака
+  Service.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Acommon.h(18,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Monitoring.cpp(85,35): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Monitoring.cpp(107,27): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Service.cpp(21,23): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Service.cpp(48,18): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+  Monitoring.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Acommon.h(18,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Monitoring.cpp(85,35): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Monitoring.cpp(107,27): warning C4018: <: несоответствие типов со знаком и без знака
+  PipeServer.cpp
+  SHA256.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\SHA256.cpp(125,15): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\SHA256.cpp(126,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\SHA256.cpp(127,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\SHA256.cpp(128,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\SHA256.cpp(129,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\SHA256.cpp(130,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\SHA256.cpp(131,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+  Создание кода...
+  ConsoleApplication2.vcxproj -> D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Debug\Antivirus_Service.exe

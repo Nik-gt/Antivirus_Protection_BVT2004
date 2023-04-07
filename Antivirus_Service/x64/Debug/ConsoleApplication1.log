@@ -1,6 +1,0 @@
-﻿D:\NEkit\Games\Visual Studio 2019\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (ConsoleApplication1.vcxproj).  Это может привести к ошибкам очистки и перестроения.
-  ConsoleApplication1.cpp
-D:\Antivirus_Protection_BVT2004\Antivirus_Service\Acommon.h(18,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
-D:\Antivirus_Protection_BVT2004\Antivirus_Service\PipeServer.cpp(58,1): warning C4267: аргумент: преобразование из "size_t" в "DWORD"; возможна потеря данных
-D:\Antivirus_Protection_BVT2004\Antivirus_Service\ConsoleApplication1.cpp(47,18): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
-  ConsoleApplication1.vcxproj -> D:\Antivirus_Protection_BVT2004\Antivirus_Service\x64\Debug\ConsoleApplication2.exe

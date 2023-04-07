@@ -1,4 +1,0 @@
-Q:\DimaProjectAvir\Antivirus_Service\x64\Debug\ConsoleApplication2.exe
-Q:\ProjectAvir\Antivirus_Service\x64\Debug\ConsoleApplication2.exe
-D:\Projects_antivirus\Antivirus_CreateDb\x64\Debug\ConsoleApplication2.exe
-D:\Antivirus_Protection_BVT2004\Antivirus_CreateDb\x64\Debug\ConsoleApplication2.exe

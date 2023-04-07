@@ -1,0 +1,21 @@
+﻿  Acommon.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\Acommon.h(18,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  Adatabase.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\Acommon.h(18,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\Adatabase.cpp(157,25): warning C4244: инициализация: преобразование "unsigned __int64" в "unsigned int", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\Adatabase.cpp(186,29): warning C4244: инициализация: преобразование "unsigned __int64" в "unsigned int", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\Adatabase.cpp(219,38): warning C4244: аргумент: преобразование "unsigned __int64" в "int", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\Adatabase.cpp(243,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\Adatabase.cpp(330,20): warning C4018: <: несоответствие типов со знаком и без знака
+  ConsoleApplication1.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\Acommon.h(18,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  SHA256.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\SHA256.cpp(123,15): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\SHA256.cpp(124,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\SHA256.cpp(125,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\SHA256.cpp(126,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\SHA256.cpp(127,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\SHA256.cpp(128,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_CreateDb\SHA256.cpp(129,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+  Создание кода...
+  ConsoleApplication1.vcxproj -> D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Debug\DB.exe
