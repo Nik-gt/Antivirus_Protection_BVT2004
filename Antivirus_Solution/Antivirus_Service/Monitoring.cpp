@@ -1,13 +1,15 @@
 #pragma once
-#include "Acommon.h"
+//#include "Acommon.h"
+#include "..\Antivirus_StaticLib\AvirCommon.h"
 // Мониторинг состояния заданной папки
+
+using namespace AvirCommon;
 
 class Monitoring {
 
 private:
     std::multimap<uint64_t, Data_Base_Virus> virusmap;//вирусной базы
     PipeServer PipeServer1;//сервер именованного канала
-
 
 public:
     Monitoring(std::multimap<uint64_t, Data_Base_Virus> virusmap, PipeServer PipeServer1) {
@@ -61,7 +63,6 @@ private:
 
     std::vector <FileInfoWatch>firsttake;//захват состояния файлов
 
-
     //Получить состояния файлов для заданной папки
     std::vector<FileInfoWatch> GetListOfFilesAndSizes(std::string pathA)
     {
@@ -114,15 +115,53 @@ private:
         firsttake = nexttake;
 
     }
-
 public:
+    bool term = false;   //////БУЛЕВО ДЛЯ ВКЛЮЧ/ВЫКЛЮЧ
+    HANDLE dwChangeHandle;
+    void cancelling() //////////ФУНКЦИЯ ВЫКЛЮЧЕНИЯ
+    {
+        term = true;
+        CloseHandle(dwChangeHandle);
+    }
+    void waiting(HANDLE dwChangeHandles, std::string path)
+    {
+        while (TRUE)
+        {
+            if (term == true) { ExitThread(GetLastError()); }///////Проверка на включение
+            printf("\nWaiting for notification...\n");
+
+            DWORD dwWaitStatus = WaitForSingleObject(dwChangeHandles, INFINITE);
+            switch (dwWaitStatus)
+            {
+            case WAIT_OBJECT_0:
+
+                React(path);
+                //предоставить дескриптор уведомления для ожидания последующих изменений
+                if (FindNextChangeNotification(dwChangeHandles) == FALSE)
+                {
+                    printf("\n ERROR: FindNextChangeNotification function failed.\n");
+                    ExitProcess(GetLastError());
+                }
+                break;
+            case WAIT_TIMEOUT:
+
+                printf("\nNo changes in the timeout period.\n");
+                break;
+
+            default:
+                printf("\n ERROR: Unhandled dwWaitStatus.\n");
+                ExitProcess(GetLastError());
+                break;
+            }
+        }
+    }
     //https://learn.microsoft.com/ru-ru/windows/win32/fileio/obtaining-directory-change-notifications
     // Чтобы закрыть дескриптор уведомления, используйте FindCloseChangeNotification .
     // Чтобы отсановить наблюдение видимо Нужна FindCloseChangeNotification. Нужно написать метод stopWatchingDirectory
     //Наблюдать за изменениями внутри папки 
     void WatchDirectory(std::string path)
     {
-        DWORD dwWaitStatus;
+        //DWORD dwWaitStatus;
         HANDLE dwChangeHandles;
         TCHAR lpDrive[4];
         TCHAR lpFile[_MAX_FNAME];
@@ -150,9 +189,14 @@ public:
             printf("\n ERROR: FindFirstChangeNotification function failed.\n");
             ExitProcess(GetLastError());
         }
+        //std::async(std::launch::async, &Monitoring::waiting, this, dwChangeHandles, path);
 
+        std::thread thr1(&Monitoring::waiting, this, dwChangeHandles, path);//////ЗАСОВЫВАНИЕ В ПОТОК
+        thr1.detach();//////////////////////////////////////////
+        /*
         while (TRUE)
         {
+            if (term == true) { ExitThread(GetLastError()); }///////Проверка на включение
             printf("\nWaiting for notification...\n");
 
             dwWaitStatus = WaitForSingleObject(dwChangeHandles, INFINITE);
@@ -178,9 +222,8 @@ public:
                 ExitProcess(GetLastError());
                 break;
             }
-        }
+        }*/
     }
-
 };//end of class
 
 /*

@@ -19,15 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Acommon.cpp" />
-    <ClCompile Include="Adatabase.cpp" />
     <ClCompile Include="ConsoleApplication1.cpp" />
-    <ClCompile Include="SHA256.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Acommon.h" />
-    <ClInclude Include="Adatabase.h" />
-    <ClInclude Include="SHA256.h" />
+    <ProjectReference Include="..\Antivirus_Service\ConsoleApplication2.vcxproj">
+      <Project>{afa5b29e-57e9-4ecd-805f-e92cdfc2d0da}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -135,6 +132,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>..\x64\Debug\Antivirus_StaticLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -152,6 +150,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>..\x64\Debug\Antivirus_StaticLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

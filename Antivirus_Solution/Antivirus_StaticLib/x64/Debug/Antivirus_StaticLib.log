@@ -1,0 +1,7 @@
+﻿  AvirCommon.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\PipeServer.cpp(72,1): warning C4267: аргумент: преобразование из "size_t" в "DWORD"; возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\AvirCommon.cpp(96,36): warning C4018: <=: несоответствие типов со знаком и без знака
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\AvirCommon.cpp(365,52): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\AvirCommon.cpp(366,86): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\AvirCommon.cpp(371,39): warning C4244: аргумент: преобразование "unsigned __int64" в "int", возможна потеря данных
+  Antivirus_StaticLib.vcxproj -> D:\Antivirus_Protection_BVT2004\Antivirus_Solution\x64\Debug\Antivirus_StaticLib.lib

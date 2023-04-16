@@ -1,0 +1,8 @@
+﻿  Monitoring.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\PipeServer.cpp(72,1): warning C4267: аргумент: преобразование из "size_t" в "DWORD"; возможна потеря данных
+  Service.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\PipeServer.cpp(72,1): warning C4267: аргумент: преобразование из "size_t" в "DWORD"; возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Service.cpp(51,18): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+  Создание кода...
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_Service\Monitoring.cpp(61): warning C4715: Monitoring::FileInfoWatch::operator(): значение возвращается не при всех путях выполнения
+  ConsoleApplication2.vcxproj -> D:\Antivirus_Protection_BVT2004\Antivirus_Solution\x64\Debug\Antivirus_Service.exe

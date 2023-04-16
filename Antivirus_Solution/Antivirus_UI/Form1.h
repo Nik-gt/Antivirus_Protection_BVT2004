@@ -265,6 +265,7 @@ namespace CppCLRWinformsProjekt {
 			this->MinimumSize = System::Drawing::Size(650, 604);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Form1::Form1_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
@@ -309,7 +310,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	if (!radioButtonFolder->Checked & !radioButtonFile->Checked) System::Windows::Forms::MessageBox::Show("Выберите тип сканирования.");
 	System::String^ BtnText = button1->Text;
 	if (BtnText == "Остановить мониторинг" || BtnText == "Остановить сканирование") {
-		PipeClient1->PipeWrite("StopScan|", "");
+		PipeClient1->PipeWrite("StopScan|", " ");
 	}
 	if (BtnText == "Начать cканирование") {
 		button1->Text = "Остановить сканирование";
@@ -326,7 +327,6 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 int count = 0;
 //std::string messageresult = "";
 System::String^ Result;
-
 //void ChangeText(int count, std::string messageresult)
 void ChangeText()
 {
@@ -389,13 +389,17 @@ void RunFileScan() {
 			PipeClient1->PipeWrite(message, SelectedDirectory);
 		}
 	}
-	ScanResult();
+	//System::Threading::ThreadStart(ScanResult());
+	System::Threading::Thread^ thread2 = gcnew System::Threading::Thread(gcnew System::Threading::ThreadStart(this, &Form1::ScanResult));
+	thread2->Name = "thread2";
+	thread2->Start();
+	//ScanResult();
 }
 
 void RunFolderScan()
 {
 	std::string message = "ManualFolderScan|";
-	if (checkBox1->Checked) std::string message = "MonitoringScan|";
+	if (checkBox1->Checked) message = "MonitoringScan|";
 	System::String^ SelectedDirectory;
 	//SelectedDirectory = "D:\\Projects_antivirus\\EICAR";	PipeClient1->PipeWrite(message, SelectedDirectory);//отладка
 	System::Windows::Forms::FolderBrowserDialog^ SelectFolderDialog = gcnew System::Windows::Forms::FolderBrowserDialog();
@@ -415,11 +419,11 @@ void RunFolderScan()
 	}
 	else return; 
 
-	ScanResult();
+	//ScanResult();
 	//System::Threading::ThreadStart(ScanResult());
-	//System::Threading::Thread^ thread1 = gcnew System::Threading::Thread(gcnew System::Threading::ThreadStart(this, &Form1::ScanResult));
-	//thread1->Name = "thread1";
-	//thread1->Start();
+	System::Threading::Thread^ thread1 = gcnew System::Threading::Thread(gcnew System::Threading::ThreadStart(this, &Form1::ScanResult));
+	thread1->Name = "thread1";
+	thread1->Start();
 
 	//ScanResult();
 		/*
@@ -441,6 +445,9 @@ private: System::Void radioButtonFile_CheckedChanged(System::Object^ sender, Sys
 }
 private: System::Void radioButtonFolder_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	checkBox1->Enabled = true;
+}
+private: System::Void Form1_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+	PipeClient1->PipeClose();
 }
 };//end-class
 }//end-namespace

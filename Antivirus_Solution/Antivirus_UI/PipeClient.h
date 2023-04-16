@@ -12,6 +12,7 @@ ref class PipeClient {
 private:
 	//fields
 	HANDLE hPipe;
+	HANDLE hPipe0;
 public:
 	//constructor and methods
 	PipeClient::PipeClient() { //Connecnt to Named Pipe
@@ -22,13 +23,22 @@ public:
 			OPEN_EXISTING,
 			0,
 			NULL);
-	}
+		//Create Named Pipe for read from server
+		hPipe0 = CreateFile(TEXT("\\\\.\\pipe\\anti0"),
+			GENERIC_READ | GENERIC_WRITE,
+			0,
+			NULL,
+			OPEN_EXISTING,
+			0,
+			NULL);
+	}	
+
 	//read data from pipe
 	System::String^ PipeClient::PipeRead()
 	{
 		char buffer[1024 * 8];
 		DWORD dwRead;
-		BOOL success = ReadFile(hPipe, buffer, sizeof(buffer) - 1, &dwRead, NULL);
+		BOOL success = ReadFile(hPipe0, buffer, sizeof(buffer) - 1, &dwRead, NULL);
 		if (!success || dwRead == 0) {}
 		return gcnew System::String(buffer);
 	}
@@ -43,6 +53,12 @@ public:
 		{
 			WriteFile(hPipe, buffer, strlen(buffer), &dwWritten, NULL);
 		}
+	}
+	//close pipe
+	void PipeClient::PipeClose()
+	{
+		CloseHandle(hPipe);
+		CloseHandle(hPipe0);
 	}
 	//if (hPipe != INVALID_HANDLE_VALUE)
 	//System::Windows::Forms::MessageBox::Show("text=");
