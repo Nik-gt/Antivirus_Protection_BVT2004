@@ -66,7 +66,7 @@ namespace AvirCommon {
 			strcpy(fileType, std::string("RAR" + '\0').c_str());
 			return fileType;
 		}
-		strcpy(fileType, std::string("EXE" + '\0').c_str()); //wrong type in base
+		strcpy(fileType, std::string("Un" + '\0').c_str()); //wrong type in base
 		std::cout << "getfileType() Unknown file" << std::endl;//debug
 		return fileType;
 	}
@@ -78,14 +78,20 @@ namespace AvirCommon {
 		std::cout << std::endl;
 		std::ifstream infile(fileName, std::ios_base::binary);
 		if (!infile) {
-			std::cout << "Not found file testing for virus: " << fileName << std::endl;
+			std::cout << "Not found testing file to scan for virus: " << fileName << std::endl;
 			return;
 		}
 
 		char* fileType = getfileType(infile);
+		if (fileName.substr(fileName.find_last_of('.'), 4) == ".com") {
+			strcpy(fileType, std::string("Com" + '\0').c_str()); //Com type in base
+			std::cout << "Com file" << std::endl;
+		}
+		if (memcmp(fileType, std::string("Un" + '\0').c_str(), 3) == 0) return; //сравнение типа файла с базой
+
 		//Размер файла
 		infile.seekg(0, infile.end);
-		long long size = infile.tellg();
+		unsigned long long size = infile.tellg();
 		infile.seekg(0);
 
 		std::cout << "Start testing for viruses file: " << fileName << " /size: " << size << std::endl;
@@ -111,13 +117,11 @@ namespace AvirCommon {
 				//Если размер вируса выходит за пределы файла то  пропускаем этот вирус  
 				if (itr->second.lenBytes > (size - i)) continue;
 
-				//отладка!!
 				//Если вне диапазона действия данного вируса то пропускаем этот вирус
-				//отладка!! if (itr->second.startOffset > i || itr->second.endOffset < i) continue;
-				//Если неподходящий тип файла то пропускаем этот вирус
-				//отладка!! if (memcmp(itr->second.fileType, fileType, 3) != 0) continue; //сравнение типа файла с базой
-				//отладка!! 
+				if (itr->second.startOffset > i || itr->second.endOffset < i) continue;
 
+				//Если неподходящий тип файла то пропускаем этот вирус
+				if (memcmp(itr->second.fileType, fileType, 3) != 0) continue; //сравнение типа файла с базой
 				//Возьмем длину вируса из карты
 				char* filehash = new char[itr->second.lenBytes];
 
@@ -140,7 +144,9 @@ namespace AvirCommon {
 				PipeServer1.PipeWrite(std::string(itr->second.virusName) + " - " + fileName + "|");
 				//PipeServer1.PipeWrite(itr->second.virusName + std::string("|"));
 				//std::cout << "bufferkey: " << itr->first << std::endl;
-				break;//Нашли совпадающие хэши и значит и вирус.Закончим с итератором //return;///
+				//Нашли совпадающие хэши и значит и вирус.
+				i = i + itr->second.lenBytes;//Пропускаем файл на длину найденного вируса
+				break;//Выходим из итератора
 			}//Конец цикла по всем записям с таким ключом 
 		}//Конец цикла по файлу
 		infile.close();
@@ -148,11 +154,6 @@ namespace AvirCommon {
 		return;
 	}
 
-	/*
-	void printHello2() {
-		std::cout << "hello from AvirCommon!" << std::endl;
-	}
-	*/
 
 	//Коструктор. сохраняем имя файла антивирусной базы данных
 	Adatabase::Adatabase(std::string VirusDbFileName)
@@ -184,7 +185,7 @@ namespace AvirCommon {
 
 
 	//Добавить файл вируса в антивирусную бд
-	void Adatabase::addNewAdatabase(std::string virusFileName) {
+	void Adatabase::addNewVirusToAdatabase(std::string virusFileName) {
 		//1.Загрузить антивирусную бд
 		std::cout << std::endl;
 		unsigned long long fileContentLength = 0;
@@ -234,8 +235,10 @@ namespace AvirCommon {
 		std::ifstream isf(virusDbFileName, std::ifstream::binary);
 		unsigned long long fileLength = 0;
 		unsigned long long totalRecords = validateDatabase(isf, fileLength);
-		if (totalRecords < 1) return false;
-
+		if (totalRecords < 1) {
+			std::cout << "AntiVirusDatabase is empty" << std::endl;
+			return false;
+		}
 		std::cout << "Loading AntiVirusDatabase to map" << std::endl;
 		std::cout << "Adatabase contains records: " << totalRecords << std::endl;
 		//initialize current row number. starts from 0, 8 bytes
@@ -332,6 +335,10 @@ namespace AvirCommon {
 
 		// Определяем тип файла
 		char* filetype = getfileType(is);
+		if (virusFileName.substr(virusFileName.find_last_of('.'), 4) == ".com") {
+			strcpy(filetype, std::string("Com" + '\0').c_str()); //Com type in base
+			std::cout << "Com file" << std::endl; 
+		}
 		is.seekg(0, is.beg);
 		std::cout << "Virus file length: " << virusLength << std::endl;
 		//if (virusLength < 65536) {} //работает если файл меньше 64 кб

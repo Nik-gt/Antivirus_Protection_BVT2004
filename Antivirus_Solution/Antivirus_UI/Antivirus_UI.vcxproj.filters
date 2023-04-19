@@ -36,5 +36,11 @@
     <Image Include="app.ico">
       <Filter>Файлы ресурсов</Filter>
     </Image>
+    <Image Include="$this.Icon.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="Icon1.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
   </ItemGroup>
 </Project>

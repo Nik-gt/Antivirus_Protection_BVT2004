@@ -1,9 +1,9 @@
 ﻿  CppCLR_WinformsProjekt.cpp
 D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_UI\PipeClient.h(54,1): warning C4267: аргумент: преобразование из "size_t" в "DWORD"; возможна потеря данных
 D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_UI\PipeClient.h(50,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_UI\Form1.h(333,30): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_UI\Form1.h(341,18): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_UI\Form1.h(359,19): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_UI\Form1.h(335,30): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_UI\Form1.h(343,18): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_UI\Form1.h(361,19): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   Создание кода...
   CppCLR_WinformsProjekt.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка

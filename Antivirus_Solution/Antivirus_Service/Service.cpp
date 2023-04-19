@@ -22,7 +22,7 @@ void doManualScan(std::string filepath, std::multimap<uint64_t, Data_Base_Virus>
     for (int i = 0; i < files.size(); i++) {
         cout << "Find file for processing: " << files[i] << endl;
         //Для подходящего файла вызываем проверку на наличие вируса в нем
-        if (files[i].substr(files[i].find_last_of('.'), 4) == ".exe") checkVirusInFile(files[i], virusmap, PipeServer1); // по mz и pe заголовок ЗАМЕНИТЬ ПРОВЕРКУ ТИПА!
+        checkVirusInFile(files[i], virusmap, PipeServer1); // по mz и pe заголовок ЗАМЕНИТЬ ПРОВЕРКУ ТИПА!
     }
     //Отправляем результат проверки на вирус по именованному каналу
     std::string Result = std::string("ResultScan|" + std::to_string(files.size()) + "|");// + Malware;
@@ -39,7 +39,7 @@ void readPipeCommandAndProceesIt(std::multimap<uint64_t, Data_Base_Virus> virusm
         std::string message = PipeServer1.PipeRead();
         cout << "message: " << message << endl;
         std::string messagescan = strtok((char*)message.c_str(), "|");
-        std::string folderForMonitoring = strtok(NULL, "|"); //ВВОД ДИРЕКТОРИИ
+        std::string ForMonitoring = strtok(NULL, "|"); //ВВОД ДИРЕКТОРИИ
         if (messagescan == "ManualFolderScan")
         {//Если пришел запрос на сканирование то стартуем сканирование
             //messagescan = strtok(NULL, "|");
@@ -48,7 +48,7 @@ void readPipeCommandAndProceesIt(std::multimap<uint64_t, Data_Base_Virus> virusm
             //todo std::thread thr(getFilesForFolderAndCheckVirus, ref(messagescan));
             //std::thread thr(doManualScan, ref(messagescan), ref(VirusDBLoader1), ref(PipeServer1));
             //thr.join();
-            std::async(std::launch::async, doManualScan, folderForMonitoring, virusmap, PipeServer1);
+            std::async(std::launch::async, doManualScan, ForMonitoring, virusmap, PipeServer1);
 
             //doManualScan(messagescan, VirusDBLoader1, PipeServer1);           
             //delete &ref(messagescan);
@@ -59,8 +59,7 @@ void readPipeCommandAndProceesIt(std::multimap<uint64_t, Data_Base_Virus> virusm
         }
         if (messagescan == "ManualFileScan")
         {//Если пришел запрос на сканирование то стартуем сканирование
-            messagescan = strtok(NULL, "|");
-            checkVirusInFile(messagescan, virusmap, PipeServer1);
+            checkVirusInFile(ForMonitoring, virusmap, PipeServer1);
             //Отправляем результат проверки на вирус по именованному каналу
             std::string Result = std::string("ResultScan|" + std::to_string(1) + "|");// + Malware;
             PipeServer1.PipeWrite(Result);
@@ -74,14 +73,14 @@ void readPipeCommandAndProceesIt(std::multimap<uint64_t, Data_Base_Virus> virusm
 
             std::vector<std::string> files;//Содержит полные имена файлов из всех подкаталогов дл¤ их проверки
             /// Класс FilesSearch.cpp
-            files = getFilesForFolder(folderForMonitoring);//Получить список файлов для заданной папки
+            files = getFilesForFolder(ForMonitoring);//Получить список файлов для заданной папки
             //cout << "Files:" << endl;
             for (int i = 0; i < files.size(); i++) {
                 cout << "Find file for processing: " << files[i] << endl;
                 //Для подходящего файла вызываем проверку на наличие вируса в нем
                 if (files[i].substr(files[i].find_last_of('.'), 4) == ".exe") checkVirusInFile(files[i], virusmap, PipeServer1); // по mz и pe заголовок ЗАМЕНИТЬ ПРОВЕРКУ ТИПА!
             }
-            monitoring.WatchDirectory(folderForMonitoring); //в поток
+            monitoring.WatchDirectory(ForMonitoring); //в поток
         }
         if (messagescan == "StopScan")
         {

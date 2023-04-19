@@ -62,6 +62,7 @@ namespace CppCLRWinformsProjekt {
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
@@ -187,7 +188,6 @@ namespace CppCLRWinformsProjekt {
 			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->button1->BackColor = System::Drawing::SystemColors::Control;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button1->Location = System::Drawing::Point(39, 492);
@@ -195,7 +195,7 @@ namespace CppCLRWinformsProjekt {
 			this->button1->Size = System::Drawing::Size(656, 59);
 			this->button1->TabIndex = 13;
 			this->button1->Text = L"Начать cканирование";
-			this->button1->UseVisualStyleBackColor = false;
+			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
 			// checkBox1
@@ -235,6 +235,8 @@ namespace CppCLRWinformsProjekt {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->groupBox1->Controls->Add(this->radioButtonFolder);
 			this->groupBox1->Controls->Add(this->checkBox1);
 			this->groupBox1->Controls->Add(this->radioButtonFile);
@@ -264,7 +266,7 @@ namespace CppCLRWinformsProjekt {
 			this->Controls->Add(this->button1);
 			this->MinimumSize = System::Drawing::Size(650, 604);
 			this->Name = L"Form1";
-			this->Text = L"Form1";
+			this->Text = L"Антивирус от подгруппы БВТ2004";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Form1::Form1_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->groupBox1->ResumeLayout(false);

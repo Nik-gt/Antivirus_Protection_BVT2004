@@ -82,12 +82,10 @@ public:
 	void printAllDatabase();
 
 	//Добавить файл вируса в антивирусную бд
-	void addNewAdatabase(std::string virusFileName);
-
+	void addNewVirusToAdatabase(std::string virusFileName);
 
 	//Прочитать файл антивирусной базы и загрузить описания вирусов в переменную типа карта/map 
 	bool loadAntiVirusDatabase(std::multimap<uint64_t, Data_Base_Virus>& virusmap);
-
 
 
 private:

@@ -1,7 +1,17 @@
 ﻿  AvirCommon.cpp
 D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\PipeServer.cpp(72,1): warning C4267: аргумент: преобразование из "size_t" в "DWORD"; возможна потеря данных
-D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\AvirCommon.cpp(96,36): warning C4018: <=: несоответствие типов со знаком и без знака
-D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\AvirCommon.cpp(365,52): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\AvirCommon.cpp(366,86): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\AvirCommon.cpp(371,39): warning C4244: аргумент: преобразование "unsigned __int64" в "int", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\AvirCommon.cpp(372,52): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\AvirCommon.cpp(373,86): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\AvirCommon.cpp(378,39): warning C4244: аргумент: преобразование "unsigned __int64" в "int", возможна потеря данных
+  PipeServer.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\PipeServer.cpp(72,1): warning C4267: аргумент: преобразование из "size_t" в "DWORD"; возможна потеря данных
+  SHA256.cpp
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\SHA256.cpp(125,15): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\SHA256.cpp(126,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\SHA256.cpp(127,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\SHA256.cpp(128,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\SHA256.cpp(129,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\SHA256.cpp(130,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+D:\Antivirus_Protection_BVT2004\Antivirus_Solution\Antivirus_StaticLib\SHA256.cpp(131,24): warning C4244: =: преобразование "uint64_t" в "uint8_t", возможна потеря данных
+  Создание кода...
   Antivirus_StaticLib.vcxproj -> D:\Antivirus_Protection_BVT2004\Antivirus_Solution\x64\Debug\Antivirus_StaticLib.lib

@@ -160,7 +160,9 @@
     <ClCompile Include="CppCLR_WinformsProjekt.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="$this.Icon.ico" />
     <Image Include="app.ico" />
+    <Image Include="Icon1.ico" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
